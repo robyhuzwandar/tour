@@ -1,68 +1,33 @@
-import 'package:chewie/chewie.dart';
-import 'package:chewie/src/chewie_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
+import 'package:playground_project/widget/arrayUtils.dart';
+import 'package:playground_project/widget/videoPlayer.dart';
 
 void main() {
   runApp(
-    ChewieDemo(),
+    MainApp()
+
+    // ChewieDemo(
+    //   url: 'https://agoralesson.s3-ap-southeast-1.amazonaws.com/files/uploads/agora/f8f3cc71-077f-4f13-be3f-a78d5364df7e--preview.mp4',
+    // ),
   );
 }
 
-class ChewieDemo extends StatefulWidget {
-  ChewieDemo({this.title = 'Chewie Demo'});
-
-  final String title;
-
+class MainApp extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    return _ChewieDemoState();
-  }
+  _MainAppState createState() => _MainAppState();
 }
 
-class _ChewieDemoState extends State<ChewieDemo> {
-  TargetPlatform _platform;
-  VideoPlayerController _videoPlayerController1;
-  VideoPlayerController _videoPlayerController2;
-  ChewieController _chewieController;
-
-  @override
-  void initState() {
-    super.initState();
-    _videoPlayerController1 = VideoPlayerController.network(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
-    _chewieController = ChewieController(
-      videoPlayerController: _videoPlayerController1,
-      aspectRatio: 3 / 2,
-      autoPlay: true,
-      looping: true,
-    );
-  }
-
-  @override
-  void dispose() {
-    _videoPlayerController1.dispose();
-    _chewieController.dispose();
-    super.dispose();
-  }
-
+class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: widget.title,
-      theme: ThemeData.light().copyWith(
-        platform: _platform ?? Theme.of(context).platform,
-      ),
+      title: 'Playground',
       home: Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text('Playground'),
         ),
-        body: Center(
-          child: Chewie(
-            controller: _chewieController,
-          ),
-        ),
+        body: ArrayUtils()
       ),
     );
   }
