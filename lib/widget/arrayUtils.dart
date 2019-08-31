@@ -21,14 +21,23 @@ class _ArrayUtilsState extends State<ArrayUtils> {
               return list(value);
             }
           )
+          // children: mapping<Widget>(
+          //   data, (index, value){
+          //     print(value.lessonId);
+          //     if(value.lessonId.contains("f3488686-2f5e-4f60-a7d7-1ecb6dec7e65")){
+          //       return Text('ADA ${value.lessonId}');
+          //     } else {
+          //       return Text('KAGAK ADA ${value.lesson_id}',);
+          //     }
+          //   }
+          // )
         ),
       ),
     );
   }
 
   list(value){
-    dynamic list = data.where((item) => item.lessonId.contains('f3488686-2f5e-4f60-a7d7-1ecb6dec7e65'));
-    print(list);
+    dynamic list = data.where((item) => item.lessonId == value.lessonId);
     if(list.length > 0){
       return Text('ADA');
     }else{
