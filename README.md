@@ -1,6 +1,6 @@
 # playground_project
 
-My Flutter Play Ground ooke
+My Flutter Play Ground, Learn Evrytime
 
 ## Getting Started
 

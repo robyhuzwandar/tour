@@ -30,10 +30,10 @@ class Data2Mock{
 
 List<Data2Mock> data2 = [
   Data2Mock(
-    lessonId: "f3488686-2f5e-4f60-a7d7-1ecb6dec7e65x"
+    lessonId: "f3488686-2f5e-4f60-a7d7-1ecb6dec7e65"
   ),
   Data2Mock(
-    lessonId: "4dbd97d1-15ae-4d07-a482-231ea12d027bx"
+    lessonId: "4dbd97d1-15ae-4d07-a482-231ea12d027b"
   ),
   Data2Mock(
     lessonId: "32a592b9-9931-42ac-b470-74e6c39b02d1"

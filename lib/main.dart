@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:playground_project/Shimmer.dart';
 import 'package:playground_project/widget/arrayUtils.dart';
 import 'package:playground_project/widget/videoPlayer.dart';
 
@@ -27,7 +28,9 @@ class _MainAppState extends State<MainApp> {
         appBar: AppBar(
           title: Text('Playground'),
         ),
-        body: ArrayUtils()
+        body: SafeArea(
+          child: ArrayUtils()
+        )
       ),
     );
   }
